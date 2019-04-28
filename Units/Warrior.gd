@@ -1,4 +1,4 @@
-extends "Unit.gd"
+extends "../Unit.gd"
 
 export (int) var damage := 2
 
@@ -38,11 +38,15 @@ func is_ready_to_attack() -> bool:
 func set_status(new_status):
     match new_status:
         ATTACK:
-            $AttackSpeed.start()
-            status = new_status
+            if status != ATTACK:
+                $AttackSpeed.start()
+                status = new_status
         LOOKING_FOR_ENEMY:
             $AttackSpeed.stop()
             status = new_status
 
 func _on_AttackSpeed_timeout():
-    target.take_damage(damage)
+    if is_instance_valid(target):
+        target.take_damage(damage)
+    else:
+        set_status(LOOKING_FOR_ENEMY)

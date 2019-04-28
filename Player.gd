@@ -4,7 +4,7 @@ onready var map := get_node("../Map")
 
 enum {IDLE, PUT}
 
-var warrior := preload("res://Warrior.tscn")
+var warrior := preload("res://Units/Warrior.tscn")
 var status := IDLE
 var current: Unit
 
