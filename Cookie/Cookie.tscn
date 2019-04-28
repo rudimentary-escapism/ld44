@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Cookie/Cookie.gd" type="Script" id=1]
+[ext_resource path="res://Cookie/cookie-100.png" type="Texture" id=2]
+[ext_resource path="res://Cookie/cookie-75.png" type="Texture" id=3]
+[ext_resource path="res://Cookie/cookie-50.png" type="Texture" id=4]
+[ext_resource path="res://Cookie/cookie-25.png" type="Texture" id=5]
+
+[node name="Cookie" type="Node2D"]
+script = ExtResource( 1 )
+max_hp = 10
+
+[node name="Cookie100" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+offset = Vector2( -35, -35 )
+
+[node name="Cookie75" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 3 )
+offset = Vector2( -35, -35 )
+
+[node name="Cookie50" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 4 )
+offset = Vector2( -35, -35 )
+
+[node name="Cookie25" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 5 )
+offset = Vector2( -35, -35 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -85.0
+margin_top = -40.0
+margin_right = -40.0
+margin_bottom = -26.0
+rect_rotation = -45.0
+rect_scale = Vector2( 1.5, 1.5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 10
+text = "10 / 10"
+align = 1

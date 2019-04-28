@@ -19,7 +19,7 @@ func real_position(coord: Vector2) -> Vector2:
     new_position.y -= OFFSET_Y - LINE * coord.y
     return new_position
     
-func grip_position(coord: Vector2) -> Vector2:
+func grid_position(coord: Vector2) -> Vector2:
     coord.y -= GRID_OFFSET_Y
     coord.x -= GRID_OFFSET_X
     var new_position := Vector2.ZERO
@@ -43,9 +43,30 @@ func search_nearest(units: Array):
     return nearest
 
 func grid_distance(coord: Vector2) -> Vector2:
-    return grip_position(position) - grip_position(coord)
+    return grid_position(position) - grid_position(coord)
     
 func take_damage(damage: int):
     $HealthBar.value -= damage
     if ($HealthBar.value == 0):
         queue_free()
+
+func move(target: Unit) -> Vector2:
+    var dist := grid_distance(target.position)
+    var new_pos := grid_position(position)
+    if abs(dist.x) > abs(dist.y):
+        if dist.x > 0:
+            new_pos.x -= 1
+        else:
+            new_pos.x +=1
+    else:
+        if dist.y > 0:
+            new_pos.y -= 1
+        else:
+            new_pos.y += 1
+    return new_pos
+    
+func is_someone_there(units: Array, coord: Vector2) -> bool:
+    for unit in units:
+        if grid_position(unit.position) == coord:
+            return true
+    return false

@@ -27,6 +27,8 @@ config/icon="res://icon.png"
 [display]
 
 window/size/width=600
+window/size/resizable=false
+window/stretch/aspect="keep"
 
 [rendering]
 
@@ -35,4 +37,5 @@ quality/intended_usage/framebuffer_allocation=1
 quality/intended_usage/framebuffer_allocation.mobile=1
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
+environment/default_clear_color=Color( 0.301961, 0.301961, 0.301961, 1 )
 environment/default_environment="res://default_env.tres"
