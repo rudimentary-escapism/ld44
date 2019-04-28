@@ -11,6 +11,8 @@ enum {IDLE, PUT}
 var status := IDLE
 var selected_unit: Unit
 
+const MIN_Y = 4
+
 func _ready():
     set_status(IDLE)
 
@@ -19,10 +21,11 @@ func _input(event: InputEvent):
         PUT:
             if event is InputEventMouseMotion:
                 var coord = selected_unit.grid_position(event.position)
-                map.preview_unit(selected_unit, coord)
+                if coord.y > MIN_Y:
+                    map.preview_unit(selected_unit, coord)
             elif event is InputEventMouseButton:
                 var coord = selected_unit.grid_position(event.position)
-                if map.is_free(selected_unit, coord):
+                if coord.y > MIN_Y && map.is_free(selected_unit, coord):
                     map.create_ally(selected_unit, coord)
                     map.remove_preview()
                     set_status(IDLE)
@@ -39,3 +42,10 @@ func set_status(_status):
             emit_signal("put_status")
         IDLE:
             emit_signal("idle_status")
+
+func _on_Game_fight_stage():
+    match status:
+        PUT:
+            map.remove_preview()
+            $Cookie.update_hp(-buy_cost)
+            set_status(IDLE)

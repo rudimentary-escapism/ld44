@@ -5,7 +5,7 @@ signal timeout
 func _ready():
     pass
 
-func _process(delta: float):
+func _process(_delta: float):
     var time = str(ceil($Timer.time_left))
     if time.length() == 1:
         time = "0" + str(time)

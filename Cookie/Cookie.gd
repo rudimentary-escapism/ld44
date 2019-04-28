@@ -10,7 +10,7 @@ func _ready():
 func update_hp(delta: int):
     hp += delta
     $Label.text = str(hp) + " / " + str(max_hp)
-    update_sprite(hp * 100 / max_hp)
+    update_sprite(float(hp * 100) / max_hp)
 
 func update_sprite(hp: float):
     toggle_sprite($Cookie100, hp > 75)

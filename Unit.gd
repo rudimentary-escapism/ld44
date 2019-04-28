@@ -70,3 +70,15 @@ func is_someone_there(units: Array, coord: Vector2) -> bool:
         if grid_position(unit.position) == coord:
             return true
     return false
+    
+func search_low_hp(units: Array) -> Unit:
+    var unit = null
+    var value = 1
+    for _unit in units:
+        var per =\
+            float(_unit.get_node("HealthBar").value) /\
+            _unit.get_node("HealthBar").max_value
+        if value > per:
+            value = per
+            unit = _unit
+    return unit

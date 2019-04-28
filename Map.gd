@@ -4,7 +4,8 @@ signal player_lost
 signal ai_lost
 
 var preview: Node2D
-    
+onready var allies_cache = $Allies.duplicate()
+ 
 func preview_unit(unit: Unit, coord: Vector2):
     remove_preview()
     preview = unit.duplicate()
@@ -45,6 +46,7 @@ func _on_WorldTimer_timeout():
 
 
 func _on_Game_fight_stage():
+    allies_cache = $Allies.duplicate()
     $WorldTimer.start()
 
 
@@ -52,3 +54,8 @@ func _on_Game_buy_stage():
     $WorldTimer.stop()
     for enemy in $Enemies.get_children():
         enemy.queue_free()
+        
+    $Allies.free()
+    add_child(allies_cache)
+        
+
