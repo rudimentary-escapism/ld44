@@ -1,4 +1,4 @@
-extends "../Unit.gd"
+extends "../../Unit.gd"
 
 export (int) var damage := 2
 
@@ -26,14 +26,15 @@ func set_status(new_status):
     match new_status:
         ATTACK:
             if status != ATTACK:
-                $AttackSpeed.start()
+                $AnimatedSprite.play("attack")
                 status = new_status
         LOOKING_FOR_ENEMY:
-            $AttackSpeed.stop()
+            $AnimatedSprite.play("default")
             status = new_status
 
-func _on_AttackSpeed_timeout():
-    if is_instance_valid(target):
+
+func _on_AnimatedSprite_animation_finished():
+    if is_instance_valid(target) && $AnimatedSprite.animation == "attack":
         target.take_damage(damage)
     else:
         set_status(LOOKING_FOR_ENEMY)

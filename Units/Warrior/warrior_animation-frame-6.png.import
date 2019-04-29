@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Warrior.png-bb60f162005d8d855cd6ed77e453d930.stex"
+path="res://.import/warrior_animation-frame-6.png-07912562f3ea747fbdc1d948b3b6d62c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Units/Warrior.png"
-dest_files=[ "res://.import/Warrior.png-bb60f162005d8d855cd6ed77e453d930.stex" ]
+source_file="res://Units/Warrior/warrior_animation-frame-6.png"
+dest_files=[ "res://.import/warrior_animation-frame-6.png-07912562f3ea747fbdc1d948b3b6d62c.stex" ]
 
 [params]
 
@@ -18,7 +18,7 @@ compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
-compress/normal_map=2
+compress/normal_map=0
 flags/repeat=0
 flags/filter=false
 flags/mipmaps=false
