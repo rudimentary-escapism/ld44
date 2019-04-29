@@ -24,6 +24,7 @@ func is_free(unit: Unit, coord: Vector2) -> bool:
 
 func create_enemy(unit: Unit, coord: Vector2):
     unit.position = unit.real_position(coord)
+    unit.get_node("HealthBar").set_tint_progress("#e85555")
     $Enemies.add_child(unit)
     
 func create_ally(unit: Unit, coord: Vector2):

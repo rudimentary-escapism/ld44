@@ -12,51 +12,51 @@ script = ExtResource( 1 )
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = -10.0
-margin_top = -39.0
+margin_top = -85.0
 margin_right = 30.0
-margin_bottom = 1.0
+margin_bottom = -45.0
 
 [node name="Card2" parent="." instance=ExtResource( 2 )]
-margin_left = 90.0
-margin_top = 560.0
-margin_right = 130.0
-margin_bottom = 600.0
+margin_left = 140.0
+margin_top = 915.0
+margin_right = 180.0
+margin_bottom = 955.0
 
 [node name="Card3" parent="." instance=ExtResource( 2 )]
-margin_left = 190.0
-margin_top = 560.0
-margin_right = 230.0
-margin_bottom = 600.0
+margin_left = 290.0
+margin_top = 915.0
+margin_right = 330.0
+margin_bottom = 955.0
 
 [node name="Card4" parent="." instance=ExtResource( 2 )]
-margin_left = 290.0
-margin_top = 560.0
-margin_right = 330.0
-margin_bottom = 600.0
+margin_left = 440.0
+margin_top = 915.0
+margin_right = 480.0
+margin_bottom = 955.0
 
 [node name="Card5" parent="." instance=ExtResource( 2 )]
-margin_left = 390.0
-margin_top = 560.0
-margin_right = 430.0
-margin_bottom = 600.0
+margin_left = 590.0
+margin_top = 915.0
+margin_right = 630.0
+margin_bottom = 955.0
 
 [node name="Card6" parent="." instance=ExtResource( 2 )]
-margin_left = 490.0
-margin_top = 560.0
-margin_right = 530.0
-margin_bottom = 600.0
-[connection signal="disabled" from="." to="Card" method="_on_Cards_disabled"]
-[connection signal="disabled" from="." to="Card6" method="_on_Cards_disabled"]
+margin_left = 740.0
+margin_top = 915.0
+margin_right = 780.0
+margin_bottom = 955.0
 [connection signal="disabled" from="." to="Card4" method="_on_Cards_disabled"]
-[connection signal="disabled" from="." to="Card5" method="_on_Cards_disabled"]
-[connection signal="disabled" from="." to="Card3" method="_on_Cards_disabled"]
 [connection signal="disabled" from="." to="Card2" method="_on_Cards_disabled"]
-[connection signal="enabled" from="." to="Card" method="_on_Cards_enabled"]
-[connection signal="enabled" from="." to="Card6" method="_on_Cards_enabled"]
+[connection signal="disabled" from="." to="Card" method="_on_Cards_disabled"]
+[connection signal="disabled" from="." to="Card5" method="_on_Cards_disabled"]
+[connection signal="disabled" from="." to="Card6" method="_on_Cards_disabled"]
+[connection signal="disabled" from="." to="Card3" method="_on_Cards_disabled"]
 [connection signal="enabled" from="." to="Card4" method="_on_Cards_enabled"]
-[connection signal="enabled" from="." to="Card5" method="_on_Cards_enabled"]
-[connection signal="enabled" from="." to="Card3" method="_on_Cards_enabled"]
 [connection signal="enabled" from="." to="Card2" method="_on_Cards_enabled"]
+[connection signal="enabled" from="." to="Card" method="_on_Cards_enabled"]
+[connection signal="enabled" from="." to="Card5" method="_on_Cards_enabled"]
+[connection signal="enabled" from="." to="Card6" method="_on_Cards_enabled"]
+[connection signal="enabled" from="." to="Card3" method="_on_Cards_enabled"]
 [connection signal="pressed" from="Card" to="." method="_on_Card_pressed"]
 [connection signal="pressed" from="Card2" to="." method="_on_Card_pressed"]
 [connection signal="pressed" from="Card3" to="." method="_on_Card_pressed"]

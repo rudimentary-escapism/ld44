@@ -20,6 +20,7 @@ func _input(event: InputEvent):
     match status:
         PUT:
             if event is InputEventMouseMotion:
+                print(event.position)
                 var coord = selected_unit.grid_position(event.position)
                 if coord.y > MIN_Y:
                     map.preview_unit(selected_unit, coord)

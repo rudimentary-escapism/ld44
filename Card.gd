@@ -2,7 +2,7 @@ extends Control
 
 signal pressed(unit)
 
-const offset = 100
+const offset = 150
 
 var unit: Resource
 

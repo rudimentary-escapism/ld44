@@ -4,12 +4,12 @@ class_name Unit
 
 const MIN_SIZE := 0
 const MAX_SIZE := 9
-const SQUARE_SIZE := 50
-const OFFSET_X := 17
+const SQUARE_SIZE := 83
+const OFFSET_X := 28
 const OFFSET_Y := 0
-const GRID_OFFSET_X := 41
-const GRID_OFFSET_Y := 25
-const LINE := 1.8
+const GRID_OFFSET_X := 68
+const GRID_OFFSET_Y := 42
+const LINE := 3
             
 func real_position(coord: Vector2) -> Vector2:
     var new_position := Vector2.ZERO

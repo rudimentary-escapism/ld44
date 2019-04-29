@@ -13,19 +13,12 @@ func _ready():
 func _on_Game_fight_stage():
     _round += 1
     match _round:
-        0:
-            get_node("../Map").create_enemy(
-                warrior.instance(), Vector2(5, 2)
-            )
         1:
             get_node("../Map").create_enemy(
-                warrior.instance(), Vector2(5, 3)
+                priest.instance(), Vector2(0, 0)
             )
             get_node("../Map").create_enemy(
-                paladin.instance(), Vector2(6, 3)
-            )
-            get_node("../Map").create_enemy(
-                paladin.instance(), Vector2(4, 3)
+                warrior.instance(), Vector2(5, 2)
             )
         2:
             get_node("../Map").create_enemy(
