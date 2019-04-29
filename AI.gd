@@ -3,6 +3,7 @@ extends Node
 var warrior = preload("res://Units/Warrior/Warrior.tscn")
 var paladin = preload("res://Units/Paladin.tscn")
 var priest = preload("res://Units/Priest.tscn")
+var rogue = preload("res://Units/Rogue/Rogue.tscn")
 
 var _round = 0
 

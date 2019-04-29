@@ -58,7 +58,6 @@ func take_damage(damage: int):
 
 func move(target: Unit) -> Vector2:
     var dist := grid_distance(target)
-    print(dist)
     var new_pos := get_grid_pos()
     if abs(dist.x) > abs(dist.y):
         if dist.x > 0:
@@ -87,6 +86,15 @@ func search_low_hp(units: Array) -> Unit:
             _unit.get_node("HealthBar").max_value
         if value > per:
             value = per
+            unit = _unit
+    return unit
+    
+func search_abs_low_hp(units: Array) -> Unit:
+    var unit = null
+    var value = 999
+    for _unit in units:
+        if value > _unit.get_node("HealthBar").value:
+            value = _unit.get_node("HealthBar").value
             unit = _unit
     return unit
     
