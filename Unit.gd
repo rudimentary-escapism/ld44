@@ -99,7 +99,7 @@ func search_abs_low_hp(units: Array) -> Unit:
     return unit
     
 func update_z_index():
-    z_index = int(grid_position.y)
+    z_index = int(get_grid_pos().y)
     
 func _input(event: InputEvent):
     if event is InputEventMouseMotion && is_preview:
