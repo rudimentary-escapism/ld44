@@ -45,5 +45,6 @@ func set_status(_status):
 func _on_Game_fight_stage():
     match status:
         PUT:
+            selected_unit.queue_free()
             $Cookie.update_hp(-buy_cost)
             set_status(IDLE)
