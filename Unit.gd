@@ -10,6 +10,9 @@ const OFFSET_Y := 0
 const GRID_OFFSET_X := 68
 const GRID_OFFSET_Y := 42
 const LINE := 3
+
+func _process(delta):
+    update_z_index()
             
 func real_position(coord: Vector2) -> Vector2:
     var new_position := Vector2.ZERO
@@ -82,3 +85,6 @@ func search_low_hp(units: Array) -> Unit:
             value = per
             unit = _unit
     return unit
+    
+func update_z_index():
+    z_index = grid_position(position).y
