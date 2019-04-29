@@ -5,7 +5,7 @@ signal disabled
 signal enabled
 
 var warrior = preload("res://Units/Warrior/Warrior.tscn")
-var paladin = preload("res://Units/Paladin.tscn")
+var paladin = preload("res://Units/Paladin/Paladin.tscn")
 var priest = preload("res://Units/Priest.tscn")
 var archer = preload("res://Units/Archer.tscn")
 var rogue = preload("res://Units/Rogue/Rogue.tscn")

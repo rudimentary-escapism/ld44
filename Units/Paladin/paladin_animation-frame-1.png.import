@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/paladin.png-8b61c8ea26ecf0e11c071e7afe10cc57.stex"
+path="res://.import/paladin_animation-frame-1.png-20ace5ae4d740ee0bfc79a50d2ab4f1f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Units/paladin.png"
-dest_files=[ "res://.import/paladin.png-8b61c8ea26ecf0e11c071e7afe10cc57.stex" ]
+source_file="res://Units/Paladin/paladin_animation-frame-1.png"
+dest_files=[ "res://.import/paladin_animation-frame-1.png-20ace5ae4d740ee0bfc79a50d2ab4f1f.stex" ]
 
 [params]
 
