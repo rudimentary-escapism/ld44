@@ -9,6 +9,7 @@ var paladin = preload("res://Units/Paladin/Paladin.tscn")
 var priest = preload("res://Units/Priest.tscn")
 var archer = preload("res://Units/Archer.tscn")
 var rogue = preload("res://Units/Rogue/Rogue.tscn")
+var mage = preload("res://Units/Mage/Mage.tscn")
 
 func _ready():
     generate()
@@ -16,7 +17,7 @@ func _ready():
 func generate():
     randomize()
     for card in get_children():
-        match randi() % 5:
+        match randi() % 6:
             0:
                 card.unit = warrior
                 card.get_node("Button/Label").text = "Warrior"
@@ -31,7 +32,10 @@ func generate():
                 card.get_node("Button/Label").text = "Archer"   
             4:
                 card.unit = rogue
-                card.get_node("Button/Label").text = "Rogue"
+                card.get_node("Button/Label").text = "Rogue"  
+            5:
+                card.unit = mage
+                card.get_node("Button/Label").text = "Mage"
         card.show()
 
 func _on_Card_pressed(unit):

@@ -111,3 +111,20 @@ func _input(event: InputEvent):
 
 func recalc_grip_position():
     set_grid_pos(get_grid_pos())
+    
+func search_nearby(unit: Unit, _units: Array) -> Array:
+    var units = Array()
+    for _unit in _units:
+        var dist = unit.grid_distance(_unit)
+        if dist.x < 2 && dist.y < 2:
+            units.push_back(_unit)
+    return units
+
+func get_enemies() -> Array:
+    if get_parent().name == "Enemies":
+        return get_node("/root/Game/Map/Allies").get_children()
+    else:
+        return get_node("/root/Game/Map/Enemies").get_children()
+        
+func get_allies() -> Array:
+    return get_parent().get_children()
