@@ -10,28 +10,31 @@ const OFFSET_Y := 0
 const GRID_OFFSET_X := 68
 const GRID_OFFSET_Y := 42
 const LINE := 3
+const MIN_Y_PLAYER = 5
+
+var grid_position: Vector2 setget set_grid_pos, get_grid_pos
+var is_preview: bool
 
 func _process(delta):
     update_z_index()
             
-func real_position(coord: Vector2) -> Vector2:
+func set_grid_pos(coord: Vector2):
     var new_position := Vector2.ZERO
     new_position.x = coord.x * SQUARE_SIZE + SQUARE_SIZE
     new_position.y = coord.y * SQUARE_SIZE + SQUARE_SIZE
     new_position.x += OFFSET_X + LINE * coord.x
     new_position.y -= OFFSET_Y - LINE * coord.y
-    return new_position
+    position = new_position
     
-func grid_position(coord: Vector2) -> Vector2:
-    coord.y -= GRID_OFFSET_Y
-    coord.x -= GRID_OFFSET_X
+func get_grid_pos() -> Vector2:
+    var pos = position
+    pos -= Vector2(GRID_OFFSET_X, GRID_OFFSET_Y)
     var new_position := Vector2.ZERO
-    new_position.x = (coord.x - SQUARE_SIZE) / SQUARE_SIZE
-    new_position.y = (coord.y - SQUARE_SIZE) / SQUARE_SIZE
-    coord.x -= new_position.x * LINE
-    coord.y -= new_position.y * LINE
-    new_position.x = (coord.x - SQUARE_SIZE) / SQUARE_SIZE
-    new_position.y = (coord.y - SQUARE_SIZE) / SQUARE_SIZE
+    new_position.x = (pos.x - SQUARE_SIZE) / SQUARE_SIZE
+    new_position.y = (pos.y - SQUARE_SIZE) / SQUARE_SIZE
+    pos -= new_position * LINE
+    new_position.x = (pos.x - SQUARE_SIZE) / SQUARE_SIZE
+    new_position.y = (pos.y - SQUARE_SIZE) / SQUARE_SIZE
     new_position.x = clamp(new_position.x, MIN_SIZE, MAX_SIZE)
     new_position.y = clamp(new_position.y, MIN_SIZE, MAX_SIZE)
     return new_position.ceil()
@@ -45,8 +48,8 @@ func search_nearest(units: Array):
             dist = position.distance_to(unit.position)
     return nearest
 
-func grid_distance(coord: Vector2) -> Vector2:
-    return grid_position(position) - grid_position(coord)
+func grid_distance(unit: Unit) -> Vector2:
+    return get_grid_pos() - unit.grid_position
     
 func take_damage(damage: int):
     $HealthBar.value -= damage
@@ -54,8 +57,9 @@ func take_damage(damage: int):
         queue_free()
 
 func move(target: Unit) -> Vector2:
-    var dist := grid_distance(target.position)
-    var new_pos := grid_position(position)
+    var dist := grid_distance(target)
+    print(dist)
+    var new_pos := get_grid_pos()
     if abs(dist.x) > abs(dist.y):
         if dist.x > 0:
             new_pos.x -= 1
@@ -70,7 +74,7 @@ func move(target: Unit) -> Vector2:
     
 func is_someone_there(units: Array, coord: Vector2) -> bool:
     for unit in units:
-        if grid_position(unit.position) == coord:
+        if unit.grid_position == coord:
             return true
     return false
     
@@ -87,4 +91,15 @@ func search_low_hp(units: Array) -> Unit:
     return unit
     
 func update_z_index():
-    z_index = grid_position(position).y
+    z_index = int(grid_position.y)
+    
+func _input(event: InputEvent):
+    if event is InputEventMouseMotion && is_preview:
+        var last_position = position
+        position = event.position
+        if get_grid_pos().y < MIN_Y_PLAYER:
+            position.y = last_position.y
+        recalc_grip_position()
+
+func recalc_grip_position():
+    set_grid_pos(get_grid_pos())

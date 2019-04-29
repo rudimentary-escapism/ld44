@@ -3,32 +3,21 @@ extends Node2D
 signal player_lost
 signal ai_lost
 
-var preview: Node2D
 onready var allies_cache = $Allies.duplicate()
- 
-func preview_unit(unit: Unit, coord: Vector2):
-    remove_preview()
-    preview = unit.duplicate()
-    preview.position = preview.real_position(coord)
-    add_child(preview)
-    
-func remove_preview():
-    if is_instance_valid(preview):
-        preview.queue_free()
         
-func is_free(unit: Unit, coord: Vector2) -> bool:
+func is_free(coord: Vector2) -> bool:
     for ally in $Allies.get_children():
-        if unit.grid_position(ally.position) == coord:
+        if ally.grid_position == coord:
             return false
     return true
 
 func create_enemy(unit: Unit, coord: Vector2):
-    unit.position = unit.real_position(coord)
+    unit.grid_position = coord
     unit.get_node("HealthBar").set_tint_progress("#e85555")
     $Enemies.add_child(unit)
     
 func create_ally(unit: Unit, coord: Vector2):
-    unit.position = unit.real_position(coord)
+    unit.grid_position = coord
     $Allies.add_child(unit)
 
 func _on_WorldTimer_timeout():

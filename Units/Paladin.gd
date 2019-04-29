@@ -18,13 +18,13 @@ func tick(allies: Array, enemies: Array):
             set_status(LOOKING_FOR_ENEMY)
             var new_pos = move(target)
             if !is_someone_there(allies, new_pos):
-                position = real_position(new_pos)
+                set_grid_pos(new_pos)
     
     if allies.size() > 0:
         ally = search_low_hp(allies)
     
 func is_ready_to_attack() -> bool:
-    var dist := grid_distance(target.position).abs()
+    var dist := grid_distance(target).abs()
     return dist.x + dist.y == 1
     
 func set_status(new_status):
