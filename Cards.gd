@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 signal selected(unit)
 signal disabled
