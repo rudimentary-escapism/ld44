@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Units/Priest.gd" type="Script" id=1]
-[ext_resource path="res://Units/Warrior.png" type="Texture" id=2]
+[ext_resource path="res://Units/priest.png" type="Texture" id=2]
 [ext_resource path="res://HealthBar.tscn" type="PackedScene" id=3]
 
 [node name="Priest" type="Node2D"]
@@ -13,18 +13,7 @@ autostart = true
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
-offset = Vector2( 0, -25 )
-
-[node name="Label" type="Label" parent="."]
-margin_left = -40.0329
-margin_top = -15.144
-margin_right = -0.0328865
-margin_bottom = -1.14403
-rect_scale = Vector2( 2, 2 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-custom_constants/shadow_as_outline = 10
-text = "Priest"
+offset = Vector2( 0, -5 )
 
 [node name="HealthBar" parent="." instance=ExtResource( 3 )]
 [connection signal="timeout" from="HealSpeed" to="." method="_on_HealSpeed_timeout"]
