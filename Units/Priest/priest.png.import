@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/priest.png-76d6607821a2d348f2cc4687665e6ade.stex"
+path="res://.import/priest.png-9f6551006e93afdedbb45d598f5fca05.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Units/priest.png"
-dest_files=[ "res://.import/priest.png-76d6607821a2d348f2cc4687665e6ade.stex" ]
+source_file="res://Units/Priest/priest.png"
+dest_files=[ "res://.import/priest.png-9f6551006e93afdedbb45d598f5fca05.stex" ]
 
 [params]
 
