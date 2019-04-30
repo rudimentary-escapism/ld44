@@ -14,6 +14,7 @@ const MIN_Y_PLAYER = 5
 
 var grid_position: Vector2 setget set_grid_pos, get_grid_pos
 var is_preview: bool
+onready var Heal = preload("res://Heal/Heal.tscn")
 
 func _process(delta):
     update_z_index()
@@ -52,6 +53,9 @@ func grid_distance(unit: Unit) -> Vector2:
     return get_grid_pos() - unit.grid_position
     
 func take_damage(damage: int):
+    if (damage < 0):
+        var heal = Heal.instance()
+        add_child(heal)
     $HealthBar.value -= damage
     if ($HealthBar.value == 0):
         queue_free()
