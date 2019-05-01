@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():
+    z_index = 12
     $AnimatedSprite.play()
 
 
