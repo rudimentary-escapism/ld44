@@ -3,7 +3,7 @@ extends "../../Unit.gd"
 export (int) var damage := 2
 export (int) var attack_range := 4
 
-var arrow = preload("res://Units/Archer/Arrow.tscn")
+var Attack = preload("res://Units/Archer/Attack/Attack.tscn")
 
 enum {LOOKING_FOR_ENEMY, ATTACK}
 
@@ -38,10 +38,10 @@ func set_status(new_status):
 
 func _on_AnimatedSprite_animation_finished():
     if is_instance_valid(target) && $AnimatedSprite.animation == "attack":
-        var _arrow = arrow.instance()
-        _arrow.position = position
-        _arrow.damage = damage
-        _arrow.target = target
-        get_node("/root/Game").add_child(_arrow)
+        var attack = Attack.instance()
+        attack.position = position
+        attack.damage = damage
+        attack.target = target
+        get_node("/root/Game").add_child(attack)
     else:
         set_status(LOOKING_FOR_ENEMY)
