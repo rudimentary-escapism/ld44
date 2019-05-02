@@ -8,11 +8,10 @@ var Hit = preload("res://Units/Archer/Hit/Hit.tscn")
 
 func _ready():
     $AnimatedSprite.play()
-#    print(position - target.position)
-    look_at(target.position - position)
 
 func _process(delta: float):
     if is_instance_valid(target):
+        look_at(target.position)
         position += position.direction_to(target.position) * speed * delta
         if position.distance_to(target.position) < 10:
             play_attack_animation()
