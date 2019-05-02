@@ -45,7 +45,12 @@ func _on_Game_buy_stage():
     for enemy in $Enemies.get_children():
         enemy.queue_free()
         
-    $Allies.free()
-    add_child(allies_cache)
+    
+    for ally in $Allies.get_children():
+        ally.queue_free()
+        
+    for ally in allies_cache.get_children():
+        allies_cache.remove_child(ally)
+        $Allies.add_child(ally)
         
 

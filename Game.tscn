@@ -30,19 +30,13 @@ margin_bottom = 1000.0
 anchor_bottom = 0.0
 
 [node name="Cards" parent="Interface" instance=ExtResource( 7 )]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-margin_left = -500.0
-margin_top = -1000.0
-margin_right = 500.0
-[connection signal="buy_stage" from="." to="Interface/Cards" method="_on_Game_buy_stage"]
 [connection signal="buy_stage" from="." to="Interface/BuyStageTimer" method="_on_Game_buy_stage"]
 [connection signal="buy_stage" from="." to="Map" method="_on_Game_buy_stage"]
-[connection signal="fight_stage" from="." to="Interface/Cards" method="_on_Game_fight_stage"]
+[connection signal="buy_stage" from="." to="Interface/Cards" method="_on_Game_buy_stage"]
 [connection signal="fight_stage" from="." to="Player" method="_on_Game_fight_stage"]
 [connection signal="fight_stage" from="." to="AI" method="_on_Game_fight_stage"]
 [connection signal="fight_stage" from="." to="Map" method="_on_Game_fight_stage"]
+[connection signal="fight_stage" from="." to="Interface/Cards" method="_on_Game_fight_stage"]
 [connection signal="ai_lost" from="Map" to="." method="_on_Map_ai_lost"]
 [connection signal="player_lost" from="Map" to="." method="_on_Map_player_lost"]
 [connection signal="timeout" from="Interface/BuyStageTimer" to="." method="_on_BuyStageTimer_timeout"]

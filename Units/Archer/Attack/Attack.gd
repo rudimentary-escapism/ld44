@@ -8,6 +8,8 @@ var Hit = preload("res://Units/Archer/Hit/Hit.tscn")
 
 func _ready():
     $AnimatedSprite.play()
+#    print(position - target.position)
+    look_at(target.position - position)
 
 func _process(delta: float):
     if is_instance_valid(target):
