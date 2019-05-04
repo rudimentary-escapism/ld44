@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/mage.ogg-e99d2f6495a87b5e65cd35b2330d5648.oggstr"
+
+[deps]
+
+source_file="res://Heal/mage.ogg"
+dest_files=[ "res://.import/mage.ogg-e99d2f6495a87b5e65cd35b2330d5648.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -48,3 +48,8 @@ func _on_AnimatedSprite_animation_finished():
         target.take_damage(damage)
     else:
         set_status(LOOKING_FOR_ENEMY)
+
+
+func _on_AnimatedSprite_frame_changed():
+    if $AnimatedSprite.frame == 1:
+        $AttackSound.play()

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/rouge.ogg-70ecfd68f3ef2cdb7cbf15996c87c6a7.oggstr"
+
+[deps]
+
+source_file="res://Units/Rogue/rouge.ogg"
+dest_files=[ "res://.import/rouge.ogg-70ecfd68f3ef2cdb7cbf15996c87c6a7.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

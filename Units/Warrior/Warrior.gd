@@ -27,6 +27,7 @@ func set_status(new_status):
         ATTACK:
             if status != ATTACK:
                 $AnimatedSprite.play("attack")
+                $AttackSound.play()
                 status = new_status
         LOOKING_FOR_ENEMY:
             $AnimatedSprite.play("default")
@@ -35,6 +36,7 @@ func set_status(new_status):
 
 func _on_AnimatedSprite_animation_finished():
     if is_instance_valid(target) && $AnimatedSprite.animation == "attack":
+        $AttackSound.play()
         target.take_damage(damage)
     else:
         set_status(LOOKING_FOR_ENEMY)

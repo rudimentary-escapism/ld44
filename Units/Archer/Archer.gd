@@ -38,6 +38,7 @@ func set_status(new_status):
 
 func _on_AnimatedSprite_animation_finished():
     if is_instance_valid(target) && $AnimatedSprite.animation == "attack":
+        $AttackSound.play()
         var attack = Attack.instance()
         attack.position = position
         attack.damage = damage

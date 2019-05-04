@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/mage.ogg-02de8ce80a3b0b1817913e8f6d329603.oggstr"
+
+[deps]
+
+source_file="res://Units/Mage/mage.ogg"
+dest_files=[ "res://.import/mage.ogg-02de8ce80a3b0b1817913e8f6d329603.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

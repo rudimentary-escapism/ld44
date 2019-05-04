@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/warrior.ogg-b53fd30acad0c6c3bf067bfc113bede9.oggstr"
+
+[deps]
+
+source_file="res://Units/Warrior/warrior.ogg"
+dest_files=[ "res://.import/warrior.ogg-b53fd30acad0c6c3bf067bfc113bede9.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
