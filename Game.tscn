@@ -16,6 +16,7 @@ script = ExtResource( 2 )
 
 [node name="Cookie" parent="Player" instance=ExtResource( 3 )]
 position = Vector2( 1000, 1000 )
+z_index = 15
 
 [node name="Map" parent="." instance=ExtResource( 4 )]
 
@@ -33,10 +34,10 @@ anchor_bottom = 0.0
 [connection signal="buy_stage" from="." to="Interface/BuyStageTimer" method="_on_Game_buy_stage"]
 [connection signal="buy_stage" from="." to="Map" method="_on_Game_buy_stage"]
 [connection signal="buy_stage" from="." to="Interface/Cards" method="_on_Game_buy_stage"]
-[connection signal="fight_stage" from="." to="Player" method="_on_Game_fight_stage"]
 [connection signal="fight_stage" from="." to="Map" method="_on_Game_fight_stage"]
 [connection signal="fight_stage" from="." to="AI" method="_on_Game_fight_stage"]
 [connection signal="fight_stage" from="." to="Interface/Cards" method="_on_Game_fight_stage"]
+[connection signal="fight_stage" from="." to="Player" method="_on_Game_fight_stage"]
 [connection signal="ai_lost" from="Map" to="." method="_on_Map_ai_lost"]
 [connection signal="player_lost" from="Map" to="." method="_on_Map_player_lost"]
 [connection signal="timeout" from="Interface/BuyStageTimer" to="." method="_on_BuyStageTimer_timeout"]

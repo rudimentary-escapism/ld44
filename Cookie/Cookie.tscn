@@ -1,14 +1,21 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Cookie/Cookie.gd" type="Script" id=1]
 [ext_resource path="res://Cookie/cookie-100.png" type="Texture" id=2]
 [ext_resource path="res://Cookie/cookie-75.png" type="Texture" id=3]
 [ext_resource path="res://Cookie/cookie-50.png" type="Texture" id=4]
 [ext_resource path="res://Cookie/cookie-25.png" type="Texture" id=5]
+[ext_resource path="res://16213.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 28
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
 
 [node name="Cookie" type="Node2D"]
 script = ExtResource( 1 )
-max_hp = 10
+max_hp = 30
 
 [node name="Cookie100" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -30,14 +37,11 @@ texture = ExtResource( 5 )
 offset = Vector2( -55, -55 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = -115.0
-margin_top = -65.0
-margin_right = -70.0
-margin_bottom = -51.0
-rect_rotation = -45.0
-rect_scale = Vector2( 2, 2 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_as_outline = 10
+margin_left = -118.292
+margin_top = -81.0659
+margin_right = 0.70784
+margin_bottom = -47.0659
+rect_rotation = -31.4083
+custom_fonts/font = SubResource( 1 )
 text = "10 / 10"
 align = 1
