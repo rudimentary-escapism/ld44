@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
@@ -7,7 +7,8 @@
 [ext_resource path="res://AI.gd" type="Script" id=5]
 [ext_resource path="res://BuyStageTimer.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Cards.tscn" type="PackedScene" id=7]
-[ext_resource path="res://ambient.ogg" type="AudioStream" id=8]
+[ext_resource path="res://UIText.tscn" type="PackedScene" id=8]
+[ext_resource path="res://ambient.ogg" type="AudioStream" id=9]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -33,16 +34,27 @@ anchor_bottom = 0.0
 
 [node name="Cards" parent="Interface" instance=ExtResource( 7 )]
 
+[node name="Lose" parent="Interface" instance=ExtResource( 8 )]
+layer = 0
+scale = Vector2( 1, 0 )
+transform = Transform2D( 1, 0, 0, 0, 0, 0 )
+text = "God damn! We have lost the battle but didn't lose the war. Try again!"
+
+[node name="Win" parent="Interface" instance=ExtResource( 8 )]
+scale = Vector2( 1, 0 )
+transform = Transform2D( 1, 0, 0, 0, 0, 0 )
+text = "Congratulate! It was a long fight but we have captured the kitchen. You need to rest Commander, I'll contact to you later."
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 8 )
+stream = ExtResource( 9 )
 autoplay = true
-[connection signal="buy_stage" from="." to="Interface/Cards" method="_on_Game_buy_stage"]
 [connection signal="buy_stage" from="." to="Interface/BuyStageTimer" method="_on_Game_buy_stage"]
+[connection signal="buy_stage" from="." to="Interface/Cards" method="_on_Game_buy_stage"]
 [connection signal="buy_stage" from="." to="Map" method="_on_Game_buy_stage"]
-[connection signal="fight_stage" from="." to="Interface/Cards" method="_on_Game_fight_stage"]
 [connection signal="fight_stage" from="." to="AI" method="_on_Game_fight_stage"]
-[connection signal="fight_stage" from="." to="Player" method="_on_Game_fight_stage"]
+[connection signal="fight_stage" from="." to="Interface/Cards" method="_on_Game_fight_stage"]
 [connection signal="fight_stage" from="." to="Map" method="_on_Game_fight_stage"]
+[connection signal="fight_stage" from="." to="Player" method="_on_Game_fight_stage"]
 [connection signal="ai_lost" from="Map" to="." method="_on_Map_ai_lost"]
 [connection signal="player_lost" from="Map" to="." method="_on_Map_player_lost"]
 [connection signal="timeout" from="Interface/BuyStageTimer" to="." method="_on_BuyStageTimer_timeout"]

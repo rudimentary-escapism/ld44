@@ -141,4 +141,6 @@ func _on_Game_fight_stage():
                 priest.instance(), Vector2(4, 0)
             )
         11:
-            get_tree().reload_current_scene()
+            get_node("/root/Game/Interface/Win").scale.y = 1
+            get_tree().paused = true
+#            get_tree().reload_current_scene()

@@ -29,6 +29,14 @@ script = ExtResource( 1 )
 [node name="Map" parent="." instance=ExtResource( 2 )]
 
 [node name="UIText" parent="." instance=ExtResource( 3 )]
+text = "Cookie Commander, we were attacked!
+
+You need to build army but won't forget:
+to make soldiers you need to sacrifice
+your own pieces.
+
+Don't waste yourself totally! Good luck, Commander!
+"
 
 [node name="Cookie" type="Sprite" parent="."]
 position = Vector2( 519, 536 )

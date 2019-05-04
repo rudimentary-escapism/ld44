@@ -11,6 +11,10 @@ func update_hp(delta: int):
     hp += delta
     $Label.text = str(hp) + " / " + str(max_hp)
     update_sprite(float(hp * 100) / max_hp)
+    if hp < 0:
+        $Label.text = "0 / " + str(max_hp)
+        get_node("/root/Game/Interface/Lose").scale.y = 1
+        get_tree().paused = true
 
 func update_sprite(hp: float):
     toggle_sprite($Cookie100, hp > 75)
