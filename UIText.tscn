@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://window.png" type="Texture" id=1]
+[ext_resource path="res://16213.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 900, 300 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 28
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="UIText" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -450.0
+margin_top = -300.0
+margin_right = 450.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -440.0
+margin_top = -280.0
+margin_right = 460.0
+rect_scale = Vector2( 0.981809, 0.904762 )
+custom_fonts/font = SubResource( 2 )
+text = "Cookie Commander, we were attacked!
+
+You need to build army but won't forget:
+to make soldiers you need to sacrifice
+your own pieces.
+
+Don't waste yourself totally! Good luck, Commander!"
+align = 1
