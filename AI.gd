@@ -18,127 +18,460 @@ func _on_Game_fight_stage():
     match _round:
         1:
             get_node("../Map").create_enemy(
-                priest.instance(), Vector2(0, 0)
+                priest.instance(), Vector2(4, 0)
             )
             get_node("../Map").create_enemy(
-                warrior.instance(), Vector2(5, 2)
+                warrior.instance(), Vector2(2, 4)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(7, 4)
             )
         2:
             get_node("../Map").create_enemy(
-                warrior.instance(), Vector2(5, 3)
+                warrior.instance(), Vector2(1, 4)
             )
             get_node("../Map").create_enemy(
-                paladin.instance(), Vector2(6, 3)
+                paladin.instance(), Vector2(4, 4)
             )
             get_node("../Map").create_enemy(
-                paladin.instance(), Vector2(4, 3)
+                paladin.instance(), Vector2(5, 4)
             )
             get_node("../Map").create_enemy(
-                priest.instance(), Vector2(4, 0)
+                warrior.instance(), Vector2(8, 4)
+            )
+            get_node("../Map").create_enemy(
+                mage.instance(), Vector2(4, 1)
+            )
+            get_node("../Map").create_enemy(
+                priest.instance(), Vector2(5, 1)
             )
         3:
             get_node("../Map").create_enemy(
-                warrior.instance(), Vector2(5, 3)
+                rogue.instance(), Vector2(0, 1)
             )
             get_node("../Map").create_enemy(
-                paladin.instance(), Vector2(6, 3)
+                priest.instance(), Vector2(3, 1)
             )
             get_node("../Map").create_enemy(
-                paladin.instance(), Vector2(4, 3)
+                archer.instance(), Vector2(4, 1)
             )
             get_node("../Map").create_enemy(
-                priest.instance(), Vector2(4, 0)
+                mage.instance(), Vector2(4, 0)
+            )
+            get_node("../Map").create_enemy(
+                archer.instance(), Vector2(5, 1)
+            )
+            get_node("../Map").create_enemy(
+                mage.instance(), Vector2(5, 0)
+            )
+            get_node("../Map").create_enemy(
+                priest.instance(), Vector2(5, 0)
+            )
+            get_node("../Map").create_enemy(
+                rogue.instance(), Vector2(9, 1)
             )
         4:
             get_node("../Map").create_enemy(
-                warrior.instance(), Vector2(5, 3)
+                rogue.instance(), Vector2(0, 1)
             )
             get_node("../Map").create_enemy(
-                paladin.instance(), Vector2(6, 3)
+                warrior.instance(), Vector2(1, 4)
             )
             get_node("../Map").create_enemy(
-                paladin.instance(), Vector2(4, 3)
+                priest.instance(), Vector2(3, 0)
             )
             get_node("../Map").create_enemy(
-                priest.instance(), Vector2(4, 0)
+                paladin.instance(), Vector2(4, 4)
+            )
+            get_node("../Map").create_enemy(
+                archer.instance(), Vector2(4, 1)
+            )
+            get_node("../Map").create_enemy(
+                paladin.instance(), Vector2(5, 4)
+            )
+            get_node("../Map").create_enemy(
+                archer.instance(), Vector2(5, 1)
+            )
+            get_node("../Map").create_enemy(
+                priest.instance(), Vector2(6, 0)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(8, 4)
+            )
+            get_node("../Map").create_enemy(
+                mage.instance(), Vector2(9, 1)
             )
         5:
             get_node("../Map").create_enemy(
-                warrior.instance(), Vector2(5, 3)
+                warrior.instance(), Vector2(0, 4)
             )
             get_node("../Map").create_enemy(
-                paladin.instance(), Vector2(6, 3)
+                rogue.instance(), Vector2(1, 1)
             )
             get_node("../Map").create_enemy(
-                paladin.instance(), Vector2(4, 3)
+                warrior.instance(), Vector2(3, 4)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(4, 4)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(5, 4)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(6, 4)
             )
             get_node("../Map").create_enemy(
                 priest.instance(), Vector2(4, 0)
+            )
+            get_node("../Map").create_enemy(
+                priest.instance(), Vector2(5, 0)
+            )
+            get_node("../Map").create_enemy(
+                mage.instance(), Vector2(4, 1)
+            )
+            get_node("../Map").create_enemy(
+                mage.instance(), Vector2(5, 1)
+            )
+            get_node("../Map").create_enemy(
+                rogue.instance(), Vector2(8, 2)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(9, 4)
             )
         6:
             get_node("../Map").create_enemy(
-                warrior.instance(), Vector2(5, 3)
+                priest.instance(), Vector2(0, 0)
             )
             get_node("../Map").create_enemy(
-                paladin.instance(), Vector2(6, 3)
+                priest.instance(), Vector2(9, 0)
             )
             get_node("../Map").create_enemy(
-                paladin.instance(), Vector2(4, 3)
+                rogue.instance(), Vector2(0, 3)
             )
             get_node("../Map").create_enemy(
-                priest.instance(), Vector2(4, 0)
+                rogue.instance(), Vector2(9, 3)
+            )
+            get_node("../Map").create_enemy(
+                archer.instance(), Vector2(2, 2)
+            )
+            get_node("../Map").create_enemy(
+                archer.instance(), Vector2(7, 2)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(3, 4)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(4, 4)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(5, 4)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(6, 4)
+            )
+            get_node("../Map").create_enemy(
+                mage.instance(), Vector2(3, 0)
+            )
+            get_node("../Map").create_enemy(
+                mage.instance(), Vector2(4, 0)
+            )
+            get_node("../Map").create_enemy(
+                mage.instance(), Vector2(5, 0)
+            )
+            get_node("../Map").create_enemy(
+                mage.instance(), Vector2(6, 0)
+            )
+            get_node("../Map").create_enemy(
+                mage.instance(), Vector2(4, 1)
+            )
+            get_node("../Map").create_enemy(
+                mage.instance(), Vector2(5, 1)
             )
         7:
             get_node("../Map").create_enemy(
-                warrior.instance(), Vector2(5, 3)
+                priest.instance(), Vector2(0, 4)
             )
             get_node("../Map").create_enemy(
-                paladin.instance(), Vector2(6, 3)
+                priest.instance(), Vector2(9, 4)
             )
             get_node("../Map").create_enemy(
-                paladin.instance(), Vector2(4, 3)
+                mage.instance(), Vector2(4, 0)
             )
             get_node("../Map").create_enemy(
-                priest.instance(), Vector2(4, 0)
+                mage.instance(), Vector2(5, 0)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(1, 4)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(2, 4)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(3, 4)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(4, 4)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(5, 4)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(6, 4)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(7, 4)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(8, 4)
+            )
+            get_node("../Map").create_enemy(
+                archer.instance(), Vector2(1, 3)
+            )
+            get_node("../Map").create_enemy(
+                archer.instance(), Vector2(2, 3)
+            )
+            get_node("../Map").create_enemy(
+                archer.instance(), Vector2(3, 3)
+            )
+            get_node("../Map").create_enemy(
+                archer.instance(), Vector2(4, 3)
+            )
+            get_node("../Map").create_enemy(
+                archer.instance(), Vector2(5, 3)
+            )
+            get_node("../Map").create_enemy(
+                archer.instance(), Vector2(6, 3)
+            )
+            get_node("../Map").create_enemy(
+                archer.instance(), Vector2(7, 3)
+            )
+            get_node("../Map").create_enemy(
+                archer.instance(), Vector2(8, 0)
             )
         8:
             get_node("../Map").create_enemy(
-                warrior.instance(), Vector2(5, 3)
+                priest.instance(), Vector2(0, 0)
             )
             get_node("../Map").create_enemy(
-                paladin.instance(), Vector2(6, 3)
+                priest.instance(), Vector2(9, 0)
             )
             get_node("../Map").create_enemy(
-                paladin.instance(), Vector2(4, 3)
+                mage.instance(), Vector2(3, 0)
             )
             get_node("../Map").create_enemy(
-                priest.instance(), Vector2(4, 0)
+                mage.instance(), Vector2(4, 0)
+            )
+            get_node("../Map").create_enemy(
+                mage.instance(), Vector2(5, 0)
+            )
+            get_node("../Map").create_enemy(
+                mage.instance(), Vector2(6, 0)
+            )
+            get_node("../Map").create_enemy(
+                archer.instance(), Vector2(0, 3)
+            )
+            get_node("../Map").create_enemy(
+                archer.instance(), Vector2(9, 3)
+            )
+            get_node("../Map").create_enemy(
+                rogue.instance(), Vector2(0, 4)
+            )
+            get_node("../Map").create_enemy(
+                rogue.instance(), Vector2(9, 4)
+            )
+            get_node("../Map").create_enemy(
+                paladin.instance(), Vector2(1, 4)
+            )
+            get_node("../Map").create_enemy(
+                paladin.instance(), Vector2(8, 4)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(2, 4)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(3, 4)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(4, 4)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(5, 4)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(6, 4)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(7, 4)
+            )
+            get_node("../Map").create_enemy(
+                archer.instance(), Vector2(3, 3)
+            )
+            get_node("../Map").create_enemy(
+                archer.instance(), Vector2(4, 3)
+            )
+            get_node("../Map").create_enemy(
+                archer.instance(), Vector2(5, 3)
+            )
+            get_node("../Map").create_enemy(
+                archer.instance(), Vector2(6, 3)
             )
         9:
             get_node("../Map").create_enemy(
-                warrior.instance(), Vector2(5, 3)
+                rogue.instance(), Vector2(0, 3)
             )
             get_node("../Map").create_enemy(
-                paladin.instance(), Vector2(6, 3)
+                rogue.instance(), Vector2(1, 3)
             )
             get_node("../Map").create_enemy(
-                paladin.instance(), Vector2(4, 3)
+                rogue.instance(), Vector2(8, 3)
             )
             get_node("../Map").create_enemy(
-                priest.instance(), Vector2(4, 0)
+                rogue.instance(), Vector2(9, 3)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(3, 0)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(4, 0)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(5, 0)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(6, 0)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(6, 1)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(6, 2)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(6, 3)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(6, 4)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(5, 4)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(4, 4)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(3, 4)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(3, 3)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(3, 2)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(3, 1)
+            )
+            get_node("../Map").create_enemy(
+                paladin.instance(), Vector2(7, 4)
+            )
+            get_node("../Map").create_enemy(
+                priest.instance(), Vector2(4, 1)
+            )
+            get_node("../Map").create_enemy(
+                priest.instance(), Vector2(5, 1)
+            )
+            get_node("../Map").create_enemy(
+                mage.instance(), Vector2(4, 2)
+            )
+            get_node("../Map").create_enemy(
+                mage.instance(), Vector2(5, 2)
+            )
+            get_node("../Map").create_enemy(
+                archer.instance(), Vector2(4, 3)
+            )
+            get_node("../Map").create_enemy(
+                archer.instance(), Vector2(5, 3)
             )
         10:
             get_node("../Map").create_enemy(
-                warrior.instance(), Vector2(5, 3)
+                priest.instance(), Vector2(0, 0)
             )
             get_node("../Map").create_enemy(
-                paladin.instance(), Vector2(6, 3)
+                priest.instance(), Vector2(9, 0)
             )
             get_node("../Map").create_enemy(
-                paladin.instance(), Vector2(4, 3)
+                rogue.instance(), Vector2(0, 1)
             )
             get_node("../Map").create_enemy(
-                priest.instance(), Vector2(4, 0)
+                rogue.instance(), Vector2(9, 1)
+            )
+            get_node("../Map").create_enemy(
+                paladin.instance(), Vector2(2, 1)
+            )
+            get_node("../Map").create_enemy(
+                paladin.instance(), Vector2(3, 2)
+            )
+            get_node("../Map").create_enemy(
+                paladin.instance(), Vector2(8, 1)
+            )
+            get_node("../Map").create_enemy(
+                paladin.instance(), Vector2(7, 2)
+            )
+            get_node("../Map").create_enemy(
+                priest.instance(), Vector2(2, 0)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(3, 4)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(4, 4)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(5, 4)
+            )
+            get_node("../Map").create_enemy(
+                warrior.instance(), Vector2(6, 4)
+            )
+            get_node("../Map").create_enemy(
+                archer.instance(), Vector2(3, 3)
+            )
+            get_node("../Map").create_enemy(
+                archer.instance(), Vector2(4, 3)
+            )
+            get_node("../Map").create_enemy(
+                archer.instance(), Vector2(5, 3)
+            )
+            get_node("../Map").create_enemy(
+                archer.instance(), Vector2(6, 3)
+            )
+            get_node("../Map").create_enemy(
+                archer.instance(), Vector2(4, 2)
+            )
+            get_node("../Map").create_enemy(
+                archer.instance(), Vector2(5, 2)
+            )
+            get_node("../Map").create_enemy(
+                mage.instance(), Vector2(3, 0)
+            )
+            get_node("../Map").create_enemy(
+                mage.instance(), Vector2(4, 0)
+            )
+            get_node("../Map").create_enemy(
+                mage.instance(), Vector2(5, 0)
+            )
+            get_node("../Map").create_enemy(
+                mage.instance(), Vector2(6, 0)
+            )
+            get_node("../Map").create_enemy(
+                mage.instance(), Vector2(3, 1)
+            )
+            get_node("../Map").create_enemy(
+                mage.instance(), Vector2(4, 1)
+            )
+            get_node("../Map").create_enemy(
+                mage.instance(), Vector2(5, 1)
+            )
+            get_node("../Map").create_enemy(
+                mage.instance(), Vector2(6, 1)
             )
         11:
             get_node("/root/Game/Interface/Win").scale.y = 1
