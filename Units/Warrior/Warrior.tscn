@@ -35,4 +35,5 @@ offset = Vector2( 0, -25 )
 
 [node name="AttackSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
+volume_db = -20.0
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
