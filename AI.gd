@@ -39,9 +39,7 @@ func _on_Game_fight_stage():
             get_node("../Map").create_enemy(
                 warrior.instance(), Vector2(8, 4)
             )
-            get_node("../Map").create_enemy(
-                mage.instance(), Vector2(4, 1)
-            )
+            create_mage(4, 1)
             get_node("../Map").create_enemy(
                 priest.instance(), Vector2(5, 1)
             )
@@ -55,15 +53,11 @@ func _on_Game_fight_stage():
             get_node("../Map").create_enemy(
                 archer.instance(), Vector2(4, 1)
             )
-            get_node("../Map").create_enemy(
-                mage.instance(), Vector2(4, 0)
-            )
+            create_mage(4, 0)
             get_node("../Map").create_enemy(
                 archer.instance(), Vector2(5, 1)
             )
-            get_node("../Map").create_enemy(
-                mage.instance(), Vector2(5, 0)
-            )
+            create_mage(5, 0)
             get_node("../Map").create_enemy(
                 priest.instance(), Vector2(5, 0)
             )
@@ -98,9 +92,7 @@ func _on_Game_fight_stage():
             get_node("../Map").create_enemy(
                 warrior.instance(), Vector2(8, 4)
             )
-            get_node("../Map").create_enemy(
-                mage.instance(), Vector2(9, 1)
-            )
+            create_mage(9, 1)
         5:
             get_node("../Map").create_enemy(
                 warrior.instance(), Vector2(0, 4)
@@ -126,12 +118,8 @@ func _on_Game_fight_stage():
             get_node("../Map").create_enemy(
                 priest.instance(), Vector2(5, 0)
             )
-            get_node("../Map").create_enemy(
-                mage.instance(), Vector2(4, 1)
-            )
-            get_node("../Map").create_enemy(
-                mage.instance(), Vector2(5, 1)
-            )
+            create_mage(4, 1)
+            create_mage(5, 1)
             get_node("../Map").create_enemy(
                 rogue.instance(), Vector2(8, 2)
             )
@@ -169,24 +157,12 @@ func _on_Game_fight_stage():
             get_node("../Map").create_enemy(
                 warrior.instance(), Vector2(6, 4)
             )
-            get_node("../Map").create_enemy(
-                mage.instance(), Vector2(3, 0)
-            )
-            get_node("../Map").create_enemy(
-                mage.instance(), Vector2(4, 0)
-            )
-            get_node("../Map").create_enemy(
-                mage.instance(), Vector2(5, 0)
-            )
-            get_node("../Map").create_enemy(
-                mage.instance(), Vector2(6, 0)
-            )
-            get_node("../Map").create_enemy(
-                mage.instance(), Vector2(4, 1)
-            )
-            get_node("../Map").create_enemy(
-                mage.instance(), Vector2(5, 1)
-            )
+            create_mage(3, 0)
+            create_mage(4, 0)
+            create_mage(5, 0)
+            create_mage(6, 0)
+            create_mage(4, 1)
+            create_mage(5, 1)
         7:
             get_node("../Map").create_enemy(
                 priest.instance(), Vector2(0, 4)
@@ -194,12 +170,8 @@ func _on_Game_fight_stage():
             get_node("../Map").create_enemy(
                 priest.instance(), Vector2(9, 4)
             )
-            get_node("../Map").create_enemy(
-                mage.instance(), Vector2(4, 0)
-            )
-            get_node("../Map").create_enemy(
-                mage.instance(), Vector2(5, 0)
-            )
+            create_mage(4, 0)
+            create_mage(5, 0)
             get_node("../Map").create_enemy(
                 warrior.instance(), Vector2(1, 4)
             )
@@ -255,18 +227,10 @@ func _on_Game_fight_stage():
             get_node("../Map").create_enemy(
                 priest.instance(), Vector2(9, 0)
             )
-            get_node("../Map").create_enemy(
-                mage.instance(), Vector2(3, 0)
-            )
-            get_node("../Map").create_enemy(
-                mage.instance(), Vector2(4, 0)
-            )
-            get_node("../Map").create_enemy(
-                mage.instance(), Vector2(5, 0)
-            )
-            get_node("../Map").create_enemy(
-                mage.instance(), Vector2(6, 0)
-            )
+            create_mage(3, 0)
+            create_mage(4, 0)
+            create_mage(5, 0)
+            create_mage(6, 0)
             get_node("../Map").create_enemy(
                 archer.instance(), Vector2(0, 3)
             )
@@ -379,12 +343,8 @@ func _on_Game_fight_stage():
             get_node("../Map").create_enemy(
                 priest.instance(), Vector2(5, 1)
             )
-            get_node("../Map").create_enemy(
-                mage.instance(), Vector2(4, 2)
-            )
-            get_node("../Map").create_enemy(
-                mage.instance(), Vector2(5, 2)
-            )
+            create_mage(4, 2)
+            create_mage(5, 2)
             get_node("../Map").create_enemy(
                 archer.instance(), Vector2(4, 3)
             )
@@ -449,31 +409,22 @@ func _on_Game_fight_stage():
             get_node("../Map").create_enemy(
                 archer.instance(), Vector2(5, 2)
             )
-            get_node("../Map").create_enemy(
-                mage.instance(), Vector2(3, 0)
-            )
-            get_node("../Map").create_enemy(
-                mage.instance(), Vector2(4, 0)
-            )
-            get_node("../Map").create_enemy(
-                mage.instance(), Vector2(5, 0)
-            )
-            get_node("../Map").create_enemy(
-                mage.instance(), Vector2(6, 0)
-            )
-            get_node("../Map").create_enemy(
-                mage.instance(), Vector2(3, 1)
-            )
-            get_node("../Map").create_enemy(
-                mage.instance(), Vector2(4, 1)
-            )
-            get_node("../Map").create_enemy(
-                mage.instance(), Vector2(5, 1)
-            )
-            get_node("../Map").create_enemy(
-                mage.instance(), Vector2(6, 1)
-            )
+            create_mage(3, 0)
+            create_mage(4, 0)
+            create_mage(5, 0)
+            create_mage(6, 0)
+            create_mage(3, 1)
+            create_mage(4, 1)
+            create_mage(5, 1)
+            create_mage(6, 1)
         11:
             get_node("/root/Game/Interface/Win").scale.y = 1
             get_tree().paused = true
 #            get_tree().reload_current_scene()
+
+func create_mage(x: int, y: int):
+    var m = mage.instance()
+    m._on_Game_fight_stage()
+    get_node("../Map").create_enemy(
+        m, Vector2(x, y)
+    )
