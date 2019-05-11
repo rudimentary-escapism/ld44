@@ -5,14 +5,17 @@ var hp: int
 
 func _ready():
     hp = max_hp
-    $Label.text = str(hp) + " / " + str(max_hp)
+    $Label.text = format(hp, max_hp)
+    
+func format(hp: int, max_hp: int) -> String:
+    return str(hp) + " / " + str(max_hp)
     
 func update_hp(delta: int):
     hp += delta
-    $Label.text = str(hp) + " / " + str(max_hp)
+    $Label.text = format(hp, max_hp)
     update_sprite(float(hp * 100) / max_hp)
     if hp < 0:
-        $Label.text = "0 / " + str(max_hp)
+        $Label.text = format(0, max_hp)
         get_node("/root/Game/Interface/Lose").scale.y = 1
         get_tree().paused = true
 
