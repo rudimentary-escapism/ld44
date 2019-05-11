@@ -1,5 +1,7 @@
 extends Node2D
 
+signal lost
+
 export (int) var max_hp := 50
 var hp: int
 
@@ -14,10 +16,9 @@ func update_hp(delta: int):
     hp += delta
     $Label.text = format(hp, max_hp)
     update_sprite(float(hp * 100) / max_hp)
-    if hp < 0:
+    if hp <= 0:
         $Label.text = format(0, max_hp)
-        get_node("/root/Game/Interface/Lose").scale.y = 1
-        get_tree().paused = true
+        emit_signal("lost")
 
 func update_sprite(hp: float):
     toggle_sprite($Cookie100, hp > 75)

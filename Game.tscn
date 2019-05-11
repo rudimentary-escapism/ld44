@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Hand.tscn" type="PackedScene" id=7]
 [ext_resource path="res://UIText.tscn" type="PackedScene" id=8]
 [ext_resource path="res://ambient.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Intro.tscn" type="PackedScene" id=10]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -17,6 +18,7 @@ script = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Cookie" parent="Player" instance=ExtResource( 3 )]
+visible = false
 position = Vector2( 1000, 1000 )
 z_index = 15
 
@@ -48,14 +50,21 @@ text = "Congratulate! It was a long fight but we have captured the kitchen. You 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 9 )
 autoplay = true
+
+[node name="Intro" parent="." instance=ExtResource( 10 )]
+margin_right = 1000.0
+margin_bottom = 1000.0
 [connection signal="buy_stage" from="." to="Interface/BuyStageTimer" method="_on_Game_buy_stage"]
 [connection signal="buy_stage" from="." to="Interface/Hand" method="_on_Game_buy_stage"]
 [connection signal="buy_stage" from="." to="Map" method="_on_Game_buy_stage"]
+[connection signal="fight_stage" from="." to="Player" method="_on_Game_fight_stage"]
+[connection signal="fight_stage" from="." to="AI" method="_on_Game_fight_stage"]
 [connection signal="fight_stage" from="." to="Interface/Hand" method="_on_Game_fight_stage"]
 [connection signal="fight_stage" from="." to="Map" method="_on_Game_fight_stage"]
-[connection signal="fight_stage" from="." to="AI" method="_on_Game_fight_stage"]
-[connection signal="fight_stage" from="." to="Player" method="_on_Game_fight_stage"]
+[connection signal="lost" from="Player/Cookie" to="." method="_on_Cookie_lost"]
 [connection signal="ai_lost" from="Map" to="." method="_on_Map_ai_lost"]
 [connection signal="player_lost" from="Map" to="." method="_on_Map_player_lost"]
+[connection signal="lost" from="AI" to="." method="_on_AI_lost"]
 [connection signal="timeout" from="Interface/BuyStageTimer" to="." method="_on_BuyStageTimer_timeout"]
 [connection signal="selected" from="Interface/Hand" to="Player" method="_on_Cards_selected"]
+[connection signal="ended" from="Intro" to="." method="_on_Intro_ended"]

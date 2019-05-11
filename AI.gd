@@ -1,5 +1,7 @@
 extends Node
 
+signal lost
+
 onready var Cards := get_node("/root/Cards")
 
 var _round = 0
@@ -413,9 +415,7 @@ func _on_Game_fight_stage():
             create_mage(5, 1)
             create_mage(6, 1)
         11:
-            get_node("/root/Game/Interface/Win").scale.y = 1
-            get_tree().paused = true
-#            get_tree().reload_current_scene()
+            emit_signal("lost")
 
 func create_mage(x: int, y: int):
     var m = Cards.get_mage()

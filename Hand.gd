@@ -7,7 +7,7 @@ signal enabled
 onready var Cards := get_node("/root/Cards")
 
 func _ready():
-    set_new_hand()
+    pass
 
 func set_new_hand():
     for card in get_children():

@@ -1,5 +1,7 @@
 extends Control
 
+signal ended
+
 var state := 1
 
 func _ready():
@@ -24,5 +26,5 @@ your own pieces."""
             $UIText/UIText.text =\
 "Don't waste yourself totally!\nGood luck, Commander!"
         _:
-            get_tree().change_scene("res://Game.tscn")
+            emit_signal("ended")
     state += 1
