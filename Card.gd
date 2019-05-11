@@ -4,7 +4,7 @@ signal pressed(unit)
 
 const offset = 150
 
-var unit: Unit
+var unit: Unit setget set_unit
 
 func _ready():
     pass

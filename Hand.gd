@@ -11,10 +11,10 @@ func _ready():
 
 func set_new_hand():
     for card in get_children():
-        card.set_unit(Cards.get_random_unit())
+        card.unit = Cards.get_random_unit()
         card.show()
 
-func _on_Card_pressed(unit):
+func _on_Card_pressed(unit: Unit):
     emit_signal("selected", unit)
 
 
