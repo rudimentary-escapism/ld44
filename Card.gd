@@ -9,8 +9,8 @@ var unit: Unit
 func _ready():
     pass
     
-func set_unit(_unit: PackedScene):
-    unit = _unit.instance()
+func set_unit(_unit: Unit):
+    unit = _unit
     $Button/Label.text = unit.name
     $Button/Image.texture = unit.get_image()
     $Button/Description.text = unit.description

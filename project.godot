@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "Cards",
+"language": "GDScript",
+"path": "res://Cards.gd"
+}, {
 "base": "Node2D",
 "class": "Unit",
 "language": "GDScript",
 "path": "res://Unit.gd"
 } ]
 _global_script_class_icons={
+"Cards": "",
 "Unit": ""
 }
 
@@ -23,6 +29,10 @@ _global_script_class_icons={
 config/name="ld44"
 run/main_scene="res://Intro.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Cards="*res://Cards.gd"
 
 [display]
 

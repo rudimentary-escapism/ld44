@@ -1,45 +1,37 @@
-extends CanvasLayer
+extends Node
 
-signal selected(unit)
-signal disabled
-signal enabled
+class_name Cards
 
-var warrior = preload("res://Units/Warrior/Warrior.tscn")
-var paladin = preload("res://Units/Paladin/Paladin.tscn")
-var priest = preload("res://Units/Priest/Priest.tscn")
-var archer = preload("res://Units/Archer/Archer.tscn")
-var rogue = preload("res://Units/Rogue/Rogue.tscn")
-var mage = preload("res://Units/Mage/Mage.tscn")
+var list := [
+    preload("res://Units/Warrior/Warrior.tscn"),
+    preload("res://Units/Paladin/Paladin.tscn"),
+    preload("res://Units/Priest/Priest.tscn"),
+    preload("res://Units/Archer/Archer.tscn"),
+    preload("res://Units/Rogue/Rogue.tscn"),
+    preload("res://Units/Mage/Mage.tscn")
+]
 
 func _ready():
-    generate()
-
-func generate():
     randomize()
-    for card in get_children():
-        match randi() % 6:
-            0:
-                card.set_unit(warrior)
-            1:
-                card.set_unit(paladin)
-            2:
-                card.set_unit(priest)
-            3:
-                card.set_unit(archer)
-            4:
-                card.set_unit(rogue)
-            5:
-                card.set_unit(mage)
-        card.show()
-
-func _on_Card_pressed(unit):
-    emit_signal("selected", unit)
-
-
-func _on_Game_fight_stage():
-    emit_signal("disabled")
-
-
-func _on_Game_buy_stage():
-    generate()
-    emit_signal("enabled")
+    
+func get_random_unit() -> Unit:
+    var index = randi() % list.size()
+    return list[index].instance()
+    
+func get_warrior() -> Unit:
+    return list[0].instance()
+    
+func get_paladin() -> Unit:
+    return list[1].instance()
+    
+func get_priest() -> Unit:
+    return list[2].instance()
+    
+func get_archer() -> Unit:
+    return list[3].instance()
+    
+func get_rogue() -> Unit:
+    return list[4].instance()
+    
+func get_mage() -> Unit:
+    return list[5].instance()
