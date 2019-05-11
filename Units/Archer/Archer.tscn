@@ -2,30 +2,31 @@
 
 [ext_resource path="res://Units/Archer/Archer.gd" type="Script" id=1]
 [ext_resource path="res://HealthBar.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Units/Archer/Archer.png" type="Texture" id=3]
-[ext_resource path="res://Units/Archer/archer_animation-frame-1.png" type="Texture" id=4]
-[ext_resource path="res://Units/Archer/archer_animation-frame-2.png" type="Texture" id=5]
-[ext_resource path="res://Units/Archer/archer_animation-frame-3.png" type="Texture" id=6]
-[ext_resource path="res://Units/Archer/archer_animation-frame-4.png" type="Texture" id=7]
-[ext_resource path="res://Units/Archer/archer_animation-frame-5.png" type="Texture" id=8]
-[ext_resource path="res://Units/Archer/archer_animation-frame-6.png" type="Texture" id=9]
+[ext_resource path="res://Units/Archer/archer_animation-frame-1.png" type="Texture" id=3]
+[ext_resource path="res://Units/Archer/archer_animation-frame-2.png" type="Texture" id=4]
+[ext_resource path="res://Units/Archer/archer_animation-frame-3.png" type="Texture" id=5]
+[ext_resource path="res://Units/Archer/archer_animation-frame-4.png" type="Texture" id=6]
+[ext_resource path="res://Units/Archer/archer_animation-frame-5.png" type="Texture" id=7]
+[ext_resource path="res://Units/Archer/archer_animation-frame-6.png" type="Texture" id=8]
+[ext_resource path="res://Units/Archer/Archer.png" type="Texture" id=9]
 [ext_resource path="res://Units/Archer/archer.ogg" type="AudioStream" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 3 ) ],
-"loop": false,
-"name": "default",
-"speed": 1.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "attack",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": false,
+"name": "default",
+"speed": 1.0
 } ]
 
 [node name="Archer" type="Node2D"]
 script = ExtResource( 1 )
+description = "- Range"
 
 [node name="HealthBar" parent="." instance=ExtResource( 2 )]
 

@@ -25,6 +25,8 @@ animations = [ {
 
 [node name="Priest" type="Node2D"]
 script = ExtResource( 1 )
+description = "- No attack
+- Strong heal"
 
 [node name="HealSpeed" type="Timer" parent="."]
 wait_time = 5.0

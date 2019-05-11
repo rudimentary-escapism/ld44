@@ -16,6 +16,8 @@ var grid_position: Vector2 setget set_grid_pos, get_grid_pos
 var is_preview: bool
 onready var Heal = preload("res://Heal/Heal.tscn")
 
+export (String, MULTILINE) var description: String
+
 func _process(delta):
     update_z_index()
             
@@ -132,3 +134,6 @@ func get_enemies() -> Array:
         
 func get_allies() -> Array:
     return get_parent().get_children()
+    
+func get_image() -> Texture:
+    return $AnimatedSprite.frames.get_frame("default", 0)

@@ -28,7 +28,7 @@ func _input(event: InputEvent):
                     set_status(IDLE)
 
 func _on_Cards_selected(unit):
-    selected_unit = unit.instance()
+    selected_unit = unit
     selected_unit.is_preview = true
     add_child(selected_unit)
     $Cookie.update_hp(buy_cost)
