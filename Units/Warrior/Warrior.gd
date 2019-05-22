@@ -7,16 +7,20 @@ enum {LOOKING_FOR_ENEMY, ATTACK}
 var status := LOOKING_FOR_ENEMY
 var target: Unit
 
-func tick(allies: Array, enemies: Array):
+func tick(_allies: Array, enemies: Array) -> bool:
     if enemies.size() > 0:
         target = search_nearest(enemies)
         if is_ready_to_attack():
             set_status(ATTACK)
         else:
             set_status(LOOKING_FOR_ENEMY)
-            var new_pos = move(target)
-            if !is_someone_there(allies, new_pos):
-                set_grid_pos(new_pos)
+#            $MoveComponent.move(target.grid.position)
+            return false
+            
+    return true
+    
+func findTarget() -> Unit:
+    return search_nearest(get_enemies())
     
 func is_ready_to_attack() -> bool:
     var dist := grid_distance(target).abs()

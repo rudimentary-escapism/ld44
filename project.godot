@@ -14,6 +14,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Cards.gd"
 }, {
+"base": "Node",
+"class": "Grid",
+"language": "GDScript",
+"path": "res://Units/Grid.gd"
+}, {
+"base": "Node",
+"class": "MoveComponent",
+"language": "GDScript",
+"path": "res://Units/MoveComponent.gd"
+}, {
 "base": "Node2D",
 "class": "Unit",
 "language": "GDScript",
@@ -21,6 +31,8 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Cards": "",
+"Grid": "",
+"MoveComponent": "",
 "Unit": ""
 }
 

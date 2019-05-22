@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Map.gd" type="Script" id=1]
 [ext_resource path="res://Field.png" type="Texture" id=2]
+[ext_resource path="res://Units/Grid.gd" type="Script" id=3]
 
 [node name="Map" type="Node2D"]
 script = ExtResource( 1 )
@@ -15,4 +16,7 @@ centered = false
 [node name="Allies" type="Node2D" parent="."]
 
 [node name="WorldTimer" type="Timer" parent="."]
+
+[node name="Grid" type="Node" parent="."]
+script = ExtResource( 3 )
 [connection signal="timeout" from="WorldTimer" to="." method="_on_WorldTimer_timeout"]

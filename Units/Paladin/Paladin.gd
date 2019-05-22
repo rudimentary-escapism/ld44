@@ -9,19 +9,22 @@ var status := LOOKING_FOR_ENEMY
 var target: Unit
 var ally: Unit
 
-func tick(allies: Array, enemies: Array):
+func tick(allies: Array, enemies: Array) -> bool:
     if enemies.size() > 0:
         target = search_nearest(enemies)
         if is_ready_to_attack():
             set_status(ATTACK)
         else:
             set_status(LOOKING_FOR_ENEMY)
-            var new_pos = move(target)
-            if !is_someone_there(allies, new_pos):
-                set_grid_pos(new_pos)
+#            $MoveComponent.move(target.grid.position)
+            return false
     
     if allies.size() > 0:
         ally = search_low_hp(allies)
+    return true
+    
+func findTarget() -> Unit:
+    return search_nearest(get_enemies())
     
 func is_ready_to_attack() -> bool:
     var dist := grid_distance(target).abs()

@@ -15,10 +15,14 @@ const MIN_Y_PLAYER = 5
 var grid_position: Vector2 setget set_grid_pos, get_grid_pos
 var is_preview: bool
 onready var Heal = preload("res://Heal/Heal.tscn")
+var grid = Grid.new()
 
 export (String, MULTILINE) var description: String
 
-func _process(delta):
+func _ready():
+    add_child(grid)
+
+func _process(_delta: float):
     update_z_index()
             
 func set_grid_pos(coord: Vector2):
@@ -61,27 +65,6 @@ func take_damage(damage: int):
     $HealthBar.value -= damage
     if ($HealthBar.value == 0):
         queue_free()
-
-func move(target: Unit) -> Vector2:
-    var dist := grid_distance(target)
-    var new_pos := get_grid_pos()
-    if abs(dist.x) > abs(dist.y):
-        if dist.x > 0:
-            new_pos.x -= 1
-        else:
-            new_pos.x +=1
-    else:
-        if dist.y > 0:
-            new_pos.y -= 1
-        else:
-            new_pos.y += 1
-    return new_pos
-    
-func is_someone_there(units: Array, coord: Vector2) -> bool:
-    for unit in units:
-        if unit.grid_position == coord:
-            return true
-    return false
     
 func search_low_hp(units: Array) -> Unit:
     var unit = null
@@ -137,3 +120,20 @@ func get_allies() -> Array:
     
 func get_image() -> Texture:
     return $AnimatedSprite.frames.get_frame("default", 0)
+    
+func _tick(map: Array) -> Array:
+    if tick(get_allies(), get_enemies()):
+        return map
+        
+    
+    if $MoveComponent != null:
+        map = $MoveComponent.moveTo(findTarget(), map)
+    return map
+    
+#Abstract function
+func tick(_allies: Array, _enemies: Array) -> bool:
+    return false
+
+#Abstract function  
+func findTarget() -> Unit:
+    return self

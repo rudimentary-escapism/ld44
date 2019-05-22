@@ -23,7 +23,9 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[node name="Priest" type="Node2D"]
+[node name="Priest" type="Node2D" groups=[
+"unit",
+]]
 script = ExtResource( 1 )
 description = "- No attack
 - Strong heal"

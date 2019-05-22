@@ -21,17 +21,13 @@ func create_ally(unit: Unit, coord: Vector2):
     $Allies.add_child(unit)
 
 func _on_WorldTimer_timeout():
-    var allies = $Allies.get_children()
-    var enemies = $Enemies.get_children()
-    for ally in allies:
-        ally.tick(allies, enemies)
+    var map = $Grid.get_map()
+    for unit in get_tree().get_nodes_in_group("unit"):
+        map = unit._tick(map)
         
-    for enemy in $Enemies.get_children():
-        enemy.tick(enemies, allies)
-        
-    if allies.size() == 0:
+    if $Allies.get_children().size() == 0:
         emit_signal("player_lost")
-    elif enemies.size() == 0:
+    elif $Enemies.get_children().size() == 0:
         emit_signal("ai_lost")
 
 
